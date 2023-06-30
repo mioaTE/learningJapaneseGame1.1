@@ -33,17 +33,20 @@ public class Main {
 
     private void run() {
         displayBanner();
-        boolean running = true;
-        while (running) {
+        boolean exit = false;
+        while (!exit) {
             displayMenu();
             int selection = promptForInt("Please enter your choice: ");
             if (selection == 1) {
                 adventure();
             }else if(selection == 4){
                 System.out.println("Thank you for using Japanese quiz!");
-                break;
+                exit = true;
+            } else {
+                //invalid choice entered
+                System.out.println("\n***Invalid choice. Please try again***\n");
             }
-            
+
         }
     }
 
